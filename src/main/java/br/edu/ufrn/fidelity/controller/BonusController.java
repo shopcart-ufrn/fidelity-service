@@ -14,7 +14,7 @@ public class BonusController {
     private BonusService bonusService;
 
     @PostMapping
-    public ResponseEntity<Integer> bonus(@RequestBody BonusRequest bonusRequest) {
+    public ResponseEntity<Integer> bonus(@RequestBody BonusRequest bonusRequest) throws InterruptedException {
         bonusService.processBonus(bonusRequest);
         return ResponseEntity.ok(200);
     }
