@@ -10,8 +10,6 @@ import java.util.Random;
 @Service
 public class BonusService {
 
-    private static final Logger log = LoggerFactory.getLogger(BonusService.class);
-
     private final Random random = new Random();
 
     private long failureStartTime = 0;
@@ -26,13 +24,6 @@ public class BonusService {
         if(isActiveFailure()) {
             Thread.sleep(2000);
         }
-
-        if(bonusRequest.getUser() == null || bonusRequest.getBonus() == 0) {
-            log.error("Bonus request is null");
-            return;
-        }
-
-        log.info("User id " + bonusRequest.getUser() + " has " + (bonusRequest.getBonus() * 0.5) + " bonus");
     }
 
     private boolean isActiveFailure() {
