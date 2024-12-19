@@ -10,7 +10,7 @@ FROM openjdk:21-jdk-slim-bullseye
 
 WORKDIR /app
 
-EXPOSE 8080
+EXPOSE 8083
 
 COPY --from=builder /app/build/libs/*.jar app.jar
 
