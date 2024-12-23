@@ -1,8 +1,5 @@
 services:
-  backend:
-    container_name: fidelity-back
-    build:
-      context: .
-      dockerfile: Dockerfile
+  fidelity:
+    build: .
     ports:
-      - "8083:8083"
+      - 8083:8083
